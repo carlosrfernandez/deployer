@@ -1,0 +1,14 @@
+apiVersion: v0
+kind: HiveConfig
+spec:
+  configuration:
+    project: devops
+    maintainer: tdeheurles@gmail.com
+
+    deployer:
+      image: deployer
+      base: golang
+      major: 0
+      minor: 0
+      name: deployer
+      

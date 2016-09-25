@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-id="<% cli.id %>"
-image="<% deployer.image %>:<% deployer.major %>.<% deployer.minor %>"
+build="<% cli.build %>"
+image="<% docker.image %>:<% version.major %>.<% version.minor %>"
 
 docker push ${image}
-docker push ${image}.${id}
+docker push ${image}.${build}

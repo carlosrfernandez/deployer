@@ -1,10 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
-id="<% cli.id %>"
-image="<% deployer.image %>:<% deployer.major %>.<% deployer.minor %>"
+build="<% cli.build %>"
+image="<% docker.image %>:<% version.major %>.<% version.minor %>"
 
+rm -r deployer
 cp -r ../../../src/deployer ./
 
 docker build -t ${image} .
-docker tag ${image} ${image}.${id}
+docker tag ${image} ${image}.${build}

@@ -1,2 +1,4 @@
 .hive
 .idea
+.secrets/.secrets.sh
+devops/deployer/build/deployer

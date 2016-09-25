@@ -5,10 +5,15 @@ spec:
     project: devops
     maintainer: tdeheurles@gmail.com
 
-    deployer:
+    docker:
       image: deployer
       base: golang
+    version:
       major: 0
       minor: 0
-      name: deployer
-      
+    volumes:
+      aws: deployer_aws
+      ssl: deployer_ssl
+    folders:
+      aws: "/root/.aws"
+      ssl: "/root/.ssl"

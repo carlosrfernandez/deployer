@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-container="<% deployer.name %>"
+container="<% docker.name %>"
 
 docker kill ${container}
 docker rm   ${container}

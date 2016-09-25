@@ -1,0 +1,4 @@
+{{ $format := "%-15s\t%-15s\t%-8s\t%-8s\t%-8s\t%-35s\t%-15s" }}
+{{printf $format "Service" "PrivateIp" "NodeStatus" "State" "Version" "Dns" "LaunchTime"}}
+{{ range . }}{{printf $format .Service .PrivateIp .NodeStatus .State .Version .Dns .LaunchTime}}
+{{ end }}

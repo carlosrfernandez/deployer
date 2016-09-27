@@ -6,10 +6,12 @@ if [ "${build}" == "" ];then
     build=0
 fi
 
+echo -e "\n\e[34mBUILD AND TEST\e[0m"
 ./hive do build devops deployer build ${build}
-if [ $? == 1 ];then exitCode=1; fi
+if [ $? != 0 ];then exitCode=1; fi
 
 if [ ${exitCode} == 0 ];then
+    echo -e "\n\e[34mRUN\e[0m"
     docker run \
         --rm \
         --net=host \
@@ -19,5 +21,9 @@ if [ ${exitCode} == 0 ];then
     if [ $? == 1 ];then exitCode=1; fi
 fi
 
-echo -e "\nExit code: ${exitCode}"
+color="32"
+if [ ${exitCode} != 0 ];then
+    color="31"
+fi
+echo -e "\n\e[${color}mExit code: ${exitCode}\e[0m"
 exit ${exitCode}

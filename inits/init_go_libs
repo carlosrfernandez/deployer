@@ -1,0 +1,3 @@
+#!/bin/bash
+
+../devops/deployer/build/go_setup

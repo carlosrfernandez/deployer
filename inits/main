@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# SETUP SECRETS
+echo -e "\n\e[34mSETUP SECRETS\e[0m"
+echo "Please enter your AWS Access Key Id:"
+read access_key
+echo "Please enter your AWS Secret Access Key:"
+read secret_key
+./init_secrets ${access_key} ${secret_key}
+
+# RUN A FIRST BUILD
+cd ..
+./deployer
+cd inits
